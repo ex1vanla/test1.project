@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>phần mềm thử nghiệm</title>
+<style>
+body{
+	background-image: url("img.jpg");
+	font-family: "Times New Roman", Times, serif;
+}
+
+label{
+	color:blue;
+}
+
+#button{
+	background-color: pink;
+}
+
+#num1,#num2{
+	color:green;
+}
+</style>
+
+</head>
+
+<body>
+<div>
+	<h2>Đây là phần mềm thử nghiệm</h2>
+</div>
+
+<div>
+	<label>Mời nhập số thứ 1</label>
+	<input = "text" placeholder = "Số thứ 1" id = "num1">
+</div>
+
+<div margin-top: 15px>
+	<label>Mời nhập số thứ 2</label>
+	<input = "text" placeholder = "Số thứ 2" id = "num2">
+</div>
+<form>
+	<label>Phép Tính</label>
+	<select id = "operator" value="+">
+		<option value = "+">+</option>
+		<option value = "-">-</option>
+		<option value = "*">*</option>
+		<option value = "/">/</option>
+	</select>
+</form>
+<div>
+	<button type="button" onclick="Cal()" id="button">Kết Quả</button>
+	<label id = "result"></label>
+	
+</div>
+
+<script type="text/javascript">
+	
+        function Cal(){
+			let a = document.getElementById("num1").value;
+			let b = document.getElementById("num2").value;
+			var operator= document.getElementById('operator').value
+			var result=0;
+
+			if (a == "" || b == ""){
+			alert("Vui lòng nhập vào hai số");
+			return false;
+			}
+	 
+		
+	 
+			if (isNaN(a) || isNaN(b)){
+				alert("Bạn phải nhập vào hai số");
+				return false;
+			}
+			if(operator == "+")
+			{
+				result = parseInt(a) + parseInt(b);
+				
+			} else if(operator == "-")
+			{
+					result = parseInt(a) - parseInt(b);
+			} else if(operator == "*")
+			{
+					result = parseInt(a) * parseInt(b);
+			}else if( b !== "0")
+			{
+					result = parseInt(a) / parseInt(b);
+			}else
+			{
+				alert("Không thể chia cho 0");
+				return false;
+			}
+			
+			document.getElementById('result').innerHTML = result;
+        }
+</script>
+
+</body>
+
+</html>
