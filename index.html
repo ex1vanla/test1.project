@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>phần mềm thử nghiệm</title>
+<title>TestDynamicWebsite</title>
 <style>
 body{
 	background-image: url("img.jpg");
@@ -24,20 +24,20 @@ label{
 
 <body>
 <div>
-	<h2>Đây là phần mềm thử nghiệm</h2>
+	<h2>Test push dynamic web to azure</h2>
 </div>
 
 <div>
-	<label>Mời nhập số thứ 1</label>
-	<input = "text" placeholder = "Số thứ 1" id = "num1">
+	<label>Number 1</label>
+	<input = "text" placeholder = "Number 1" id = "num1">
 </div>
 
 <div margin-top: 15px>
-	<label>Mời nhập số thứ 2</label>
-	<input = "text" placeholder = "Số thứ 2" id = "num2">
+	<label>Number 2</label>
+	<input = "text" placeholder = "Number 2" id = "num2">
 </div>
 <form>
-	<label>Phép Tính</label>
+	<label>Operation</label>
 	<select id = "operator" value="+">
 		<option value = "+">+</option>
 		<option value = "-">-</option>
@@ -46,7 +46,7 @@ label{
 	</select>
 </form>
 <div>
-	<button type="button" onclick="Cal()" id="button">Kết Quả</button>
+	<button type="button" onclick="Cal()" id="button">Result</button>
 	<label id = "result"></label>
 	
 </div>
@@ -60,14 +60,14 @@ label{
 			var result=0;
 
 			if (a == "" || b == ""){
-			alert("Vui lòng nhập vào hai số");
+			alert("Please input 2 numbers");
 			return false;
 			}
 	 
 		
 	 
 			if (isNaN(a) || isNaN(b)){
-				alert("Bạn phải nhập vào hai số");
+				alert("Please input number 1 and 2");
 				return false;
 			}
 			if(operator == "+")
@@ -85,7 +85,7 @@ label{
 					result = parseInt(a) / parseInt(b);
 			}else
 			{
-				alert("Không thể chia cho 0");
+				alert("Cannot divide by 0");
 				return false;
 			}
 			
